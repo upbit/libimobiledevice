@@ -11,5 +11,5 @@ automake --add-missing
 autoconf
 
 if [ -z "$NOCONFIGURE" ]; then
-    ./configure "$@"
+    ./configure LDFLAGS="-L$(python-config --prefix)/lib/" "$@"
 fi
