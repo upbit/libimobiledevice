@@ -58,6 +58,7 @@ tools/idevicename
 tools/idevicepair
 tools/ideviceprovision
 tools/idevicecrashreport
+tools/idevicedebug
 cython/.libs/*
 cython/*.c
 doxygen.cfg
