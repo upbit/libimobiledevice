@@ -51,7 +51,6 @@ tools/ideviceimagemounter
 tools/idevicescreenshot
 tools/idevicebackup2
 tools/idevicedate
-tools/idevicedebug
 tools/idevicedebugserverproxy
 tools/idevicediagnostics
 tools/ideviceenterrecovery
