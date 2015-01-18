@@ -3,7 +3,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/include -I$(top_srcdir)
 AM_CFLAGS = $(GLOBAL_CFLAGS) $(libgnutls_CFLAGS) $(libtasn1_CFLAGS) $(libgcrypt_CFLAGS) $(openssl_CFLAGS) $(libplist_CFLAGS) $(LFS_CFLAGS)
 AM_LDFLAGS = $(libgnutls_LIBS) $(libtasn1_LIBS) $(libgcrypt_LIBS) $(openssl_LIBS) $(libplist_LIBS)
 
-bin_PROGRAMS = idevice_id ideviceinfo idevicename idevicepair idevicesyslog ideviceimagemounter idevicescreenshot ideviceenterrecovery idevicedate idevicebackup idevicebackup2 ideviceprovision idevicedebugserverproxy idevicediagnostics idevicedebug
+bin_PROGRAMS = idevice_id ideviceinfo idevicename idevicepair idevicesyslog ideviceimagemounter idevicescreenshot ideviceenterrecovery idevicedate idevicebackup idevicebackup2 ideviceprovision idevicedebugserverproxy idevicediagnostics idevicedebug race_condition_imagemounter
 
 ideviceinfo_SOURCES = ideviceinfo.c
 ideviceinfo_CFLAGS = $(AM_CFLAGS)
@@ -79,6 +79,11 @@ idevicedebug_SOURCES = idevicedebug.c
 idevicedebug_CFLAGS = $(AM_CFLAGS)
 idevicedebug_LDFLAGS = $(top_builddir)/common/libinternalcommon.la $(AM_LDFLAGS)
 idevicedebug_LDADD = $(top_builddir)/src/libimobiledevice.la
+
+race_condition_imagemounter_SOURCES = race_condition_imagemounter.c
+race_condition_imagemounter_CFLAGS = $(AM_CFLAGS)
+race_condition_imagemounter_LDFLAGS = $(top_builddir)/common/libinternalcommon.la $(AM_LDFLAGS)
+race_condition_imagemounter_LDADD = $(top_builddir)/src/libimobiledevice.la
 
 if !WIN32
 bin_PROGRAMS += idevicecrashreport
